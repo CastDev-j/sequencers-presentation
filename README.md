@@ -6,6 +6,7 @@ Los temas son referentes a los videos, deben adentrar más sobre cada tema para 
 Debes subir como entregable la presentación y 5 preguntas de opción múltiple de tu tema
 El sábado se calificará la presentación de acuerdo a los siguientes criterios.
 
-# temas (imagen)
+# temas
 
-![Temas](https://lh3.googleusercontent.com/drive-storage/AJQWtBOp04VMjITpsCi13xLrbXZllvHDzVc2TpZb-rcZYmercWJ1rduJxEkF5gGg6xyyCNgkbF810q126rm35YRFipHZo97uxCkIY6haED9alYAPdjbdsg=w1901-h978?auditContext=forDisplay)
+<img width="1700" height="202" alt="image" src="https://github.com/user-attachments/assets/90fcb2b7-b012-4eb7-9958-c8cd170286a0" />
+
