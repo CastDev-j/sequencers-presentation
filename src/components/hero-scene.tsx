@@ -66,7 +66,7 @@ function StepBox({
         {step.number}
       </Text>
       <Text
-        position={[0, -0.46, 0]}
+        position={[0, -0.5, 0]}
         fontSize={isCompact ? 0.1 : 0.12}
         color={isActive ? step.color : "#9ca3af"}
         anchorX="center"
