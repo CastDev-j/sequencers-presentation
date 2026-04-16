@@ -1,11 +1,249 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { HeroScene } from "@/components/hero-scene";
+import Layout from "../layouts/Layout.astro";
+import { SequencerDiagram } from "@/components/sequencer-diagram";
+import { TrafficLightDemo } from "@/components/traffic-light-demo";
+import { CPUCycleDemo } from "@/components/cpu-cycle-demo";
+import { QuizSection } from "@/components/quiz-section";
 ---
 
 <Layout>
-	<Welcome />
+  <main class="min-h-screen bg-white">
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-neutral-100"
+    >
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-14">
+          <span class="font-semibold text-neutral-900"
+            >Arquitectura de Computadoras</span
+          >
+          <nav class="hidden sm:flex items-center gap-6 text-sm">
+            <a
+              href="#definicion"
+              class="text-neutral-500 hover:text-neutral-900 transition-colors"
+            >
+              Definicion
+            </a>
+            <a
+              href="#ejemplos"
+              class="text-neutral-500 hover:text-neutral-900 transition-colors"
+            >
+              Ejemplos
+            </a>
+            <a
+              href="#quiz"
+              class="text-neutral-500 hover:text-neutral-900 transition-colors"
+            >
+              Quiz
+            </a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+
+    <section class="pt-14">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 pb-6 text-center">
+        <p class="text-xs uppercase tracking-widest text-neutral-400 mb-3">
+          Arquitectura de Computadoras
+        </p>
+        <h1
+          class="text-4xl sm:text-5xl font-bold text-neutral-900 tracking-tight text-balance"
+        >
+          Secuenciadores
+        </h1>
+        <p class="mt-4 text-lg text-neutral-500 max-w-xl mx-auto text-pretty">
+          Maquinas simples de logica secuencial que controlan el orden de
+          ejecucion de instrucciones
+        </p>
+      </div>
+      <HeroScene client:load />
+    </section>
+
+    <section id="definicion" class="py-16 sm:py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 mb-4">
+              ¿Que son los secuenciadores?
+            </h2>
+            <p class="text-neutral-600 leading-relaxed mb-6">
+              Un secuenciador es un circuito de <strong class="text-neutral-900"
+                >logica secuencial</strong
+              > que ejecuta pasos en orden, uno por uno, activando diferentes partes
+              del circuito en cada pulso del reloj.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex gap-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-neutral-50 flex items-center justify-center shrink-0"
+                >
+                  <span class="text-blue-600 font-bold">1</span>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-neutral-900">Contador</h3>
+                  <p class="text-sm text-neutral-500">
+                    Avanza paso a paso con cada pulso del reloj (0, 1, 2, 3...)
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0"
+                >
+                  <span class="text-emerald-600 font-bold">2</span>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-neutral-900">Decodificador</h3>
+                  <p class="text-sm text-neutral-500">
+                    Activa una salida diferente segun el paso actual del
+                    contador
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <SequencerDiagram client:load />
+            <p class="text-xs text-center text-neutral-400 mt-3">
+              Diagrama: El contador avanza y el decodificador activa una salida
+              por paso
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ejemplos" class="py-16 sm:py-20 bg-neutral-50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 mb-3">
+            Ejemplos Interactivos
+          </h2>
+          <p class="text-neutral-500 max-w-lg mx-auto text-pretty">
+            Interactua con estos ejemplos para entender como funcionan los
+            secuenciadores
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-semibold text-neutral-900 mb-2">1. Semaforo</h3>
+            <p class="text-sm text-neutral-500 mb-4">
+              Secuencia: <strong class="text-neutral-700"
+                >Verde, Ambar, Rojo</strong
+              >, y luego reinicia. Cada paso activa una luz diferente.
+            </p>
+            <TrafficLightDemo client:load />
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-neutral-900 mb-2">2. Ciclo de CPU</h3>
+            <p class="text-sm text-neutral-500 mb-4">
+              La CPU ejecuta 4 fases: <strong class="text-neutral-700"
+                >Fetch, Decode, Execute, Store</strong
+              >. El secuenciador controla cual fase esta activa.
+            </p>
+            <CPUCycleDemo client:load />
+          </div>
+        </div>
+
+        <div class="mt-12 overflow-x-auto">
+          <table
+            class="w-full text-sm bg-white rounded-lg border border-neutral-200"
+          >
+            <thead>
+              <tr class="border-b border-neutral-200">
+                <th class="text-left py-3 px-4 text-neutral-500 font-medium"
+                  >Paso</th
+                >
+                <th class="text-left py-3 px-4 text-neutral-500 font-medium"
+                  >Fase CPU</th
+                >
+                <th class="text-left py-3 px-4 text-neutral-500 font-medium"
+                  >Accion</th
+                >
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral-100">
+              <tr>
+                <td class="py-3 px-4 font-mono text-neutral-900">1</td>
+                <td class="py-3 px-4"
+                  ><span
+                    class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 text-xs font-medium"
+                    >Fetch</span
+                  ></td
+                >
+                <td class="py-3 px-4 text-neutral-600"
+                  >Buscar la instruccion en memoria</td
+                >
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-neutral-900">2</td>
+                <td class="py-3 px-4"
+                  ><span
+                    class="px-2 py-0.5 rounded bg-yellow-100 text-yellow-700 text-xs font-medium"
+                    >Decode</span
+                  ></td
+                >
+                <td class="py-3 px-4 text-neutral-600"
+                  >Decodificar que operacion realizar</td
+                >
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-neutral-900">3</td>
+                <td class="py-3 px-4"
+                  ><span
+                    class="px-2 py-0.5 rounded bg-red-100 text-red-700 text-xs font-medium"
+                    >Execute</span
+                  ></td
+                >
+                <td class="py-3 px-4 text-neutral-600">Ejecutar la operacion</td
+                >
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono text-neutral-900">4</td>
+                <td class="py-3 px-4"
+                  ><span
+                    class="px-2 py-0.5 rounded bg-neutral-100 text-neutral-700 text-xs font-medium"
+                    >Store</span
+                  ></td
+                >
+                <td class="py-3 px-4 text-neutral-600">Guardar el resultado</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz" class="py-16 sm:py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 mb-3">
+            Sección de Preguntas
+          </h2>
+          <p class="text-neutral-500 max-w-lg mx-auto text-pretty">
+            Las respuestas estan en el contenido del sitio, podrás ver las
+            respuestas correctas al finalizar el quiz :3
+          </p>
+        </div>
+
+        <QuizSection client:load />
+      </div>
+    </section>
+
+    <footer class="py-8 border-t border-neutral-100">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        <a
+          href=""
+          class="font-medium text-neutral-900 hover:text-neutral-500 hover:underline transition-colors"
+        >
+          Visita el repositorio en GitHub @CastDev-j
+        </a>
+      </div>
+    </footer>
+  </main>
 </Layout>
