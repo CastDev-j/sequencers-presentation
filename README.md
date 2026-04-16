@@ -1,46 +1,11 @@
-# Astro Starter Kit: Basics
+# Practica Arquitectura de Computadoras: Secuenciadores
 
-```sh
-bun create astro@latest -- --template basics
-```
+Genera una presentación de máximo 5 minutos sobre el meta que se te asigno.
+Los temas son referentes a los videos, deben adentrar más sobre cada tema para que que les quede claro a tus compañeros.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Debes subir como entregable la presentación y 5 preguntas de opción múltiple de tu tema
+El sábado se calificará la presentación de acuerdo a los siguientes criterios.
 
-## 🚀 Project Structure
+# temas (imagen)
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+![Temas](https://lh3.googleusercontent.com/drive-storage/AJQWtBOp04VMjITpsCi13xLrbXZllvHDzVc2TpZb-rcZYmercWJ1rduJxEkF5gGg6xyyCNgkbF810q126rm35YRFipHZo97uxCkIY6haED9alYAPdjbdsg=w1901-h978?auditContext=forDisplay)
