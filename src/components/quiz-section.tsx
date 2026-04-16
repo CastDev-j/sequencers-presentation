@@ -49,7 +49,7 @@ const QUESTIONS = [
     hint: "Mira el indicador pulsante en el diagrama del secuenciador",
     options: [
       { label: "A", text: "La temperatura del procesador" },
-      { label: "B", text: "La senal del reloj (pulso)" },
+      { label: "B", text: "La señal del reloj (pulso)" },
       { label: "C", text: "La entrada del teclado" },
     ],
     correct: 1,
